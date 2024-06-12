@@ -1,8 +1,9 @@
----
-- hosts: web_servers
-  become: true
+# Install Apache web server
+- name: Install Apache
+  hosts: localhost
+  become: yes
   tasks:
-    - name: Install Apache2
+    - name: Install Apache package
       package:
         name: httpd
-      
+        state: present
