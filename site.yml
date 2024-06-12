@@ -5,3 +5,8 @@
     - name: Print OS info
       package:
         name: httpd
+      register: package_result
+
+    - name: Debug package result
+      debug:
+        var: package_result
