@@ -2,11 +2,7 @@
 - hosts: web_servers
   become: true
   tasks:
-    - name: Print OS info
-      package:
+    - name: Install Apache2
+      ansible.builtin.package:
         name: httpd
-      register: package_result
-
-    - name: Debug package result
-      debug:
-        var: package_result
+        state: present
