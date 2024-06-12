@@ -1,0 +1,15 @@
+---
+- hosts: web_servers
+  become: yes
+  tasks:
+    - name: Update dnf cache and install required packages
+      ansible.builtin.dnf:
+        name:
+          - nano
+          - vim
+          - wget
+          - curl
+          - net-tools
+          - lsof
+          - bash-completion
+        state: present
