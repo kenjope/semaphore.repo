@@ -7,7 +7,7 @@
     app_root: html_demo_site-main
   tasks:
     - name: Update apt cache and install Nginx
-      apt:
+      dnf:
         name: nginx
         state: latest
         update_cache: yes
