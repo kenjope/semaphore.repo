@@ -2,6 +2,5 @@
  - name: "Get ping response"
    hosts: web_servers
    tasks:
-   - action: ping
-     register: hello
-   - debug: msg="{hello.stdout}"
+    - name: Ping all nodes
+      ansible.builtin.ping:
